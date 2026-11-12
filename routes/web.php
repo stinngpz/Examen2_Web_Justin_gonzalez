@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InsumoController;
 use App\Http\Controllers\ProveedorController;
-use PHPUnit\Framework\MockObject\Rule\Parameters;
+use App\Http\Controllers\EmpleadoController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -22,4 +22,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('proveedores', ProveedorController::class)->parameters([
         'proveedores' => 'proveedor',
     ]);
+    Route::resource('empleados', EmpleadoController::class);
 });

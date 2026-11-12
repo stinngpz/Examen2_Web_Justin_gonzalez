@@ -49,15 +49,15 @@
 
             <div class="sidebar-heading">Gestión</div>
 
-            <li class="nav-item {{ request()->routeIs('insumos.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('insumos.index') }}">
+                <li class="nav-item {{ request()->routeIs('insumos.*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('insumos.index') }}">
                     <i class="fas fa-fw fa-seedling"></i>
                     <span>Insumos</span>
                 </a>
             </li>
 
             <li class="nav-item {{ request()->routeIs('proveedores.*') ? 'active' : '' }}">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ route('proveedores.index') }}">
                     <i class="fas fa-fw fa-truck"></i>
                     <span>Proveedores</span>
                 </a>

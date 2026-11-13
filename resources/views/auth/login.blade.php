@@ -7,18 +7,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body class="bg-success bg-gradient">
+<body style="background: linear-gradient(rgba(10, 60, 30, 0.55), rgba(10, 60, 30, 0.55)), url('{{ asset('sb-admin/img/fondo-login.jpg') }}') center center / cover no-repeat fixed;">
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
-            <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+            <div class="col-12 col-sm-10 col-md-7 col-lg-4">
                 <div class="card shadow-lg border-0 rounded-4">
-                    <div class="card-header bg-dark text-white text-center py-4 rounded-top-4">
-                        <h3 class="fw-bold mb-1">
-                            <i class="bi bi-flower1 text-success me-2"></i>AGROVALLE Honduras
-                        </h3>
-                        <small class="text-white-50">Sistema de Gestión Interna</small>
+                    <div class="card-header bg-white text-center py-4 rounded-top-4 border-0">
+                        <img src="{{ asset('sb-admin/img/logo.png') }}" alt="AGROVALLE" style="width: 90px;">
+                        <h3 class="fw-bold text-success mt-2 mb-0">AGROVALLE</h3>
                     </div>
                     <div class="card-body p-4">
+                        <p class="text-center text-muted mb-4">Ingrese con su correo institucional</p>
                         <form action="{{ route('login.post') }}" method="POST">
                             @csrf
 
@@ -47,7 +46,7 @@
                                 <label class="form-check-label" for="remember">Recordar mi sesión</label>
                             </div>
 
-                            <button type="submit" class="btn btn-success w-100 py-2 fw-semibold">
+                            <button type="submit" class="btn btn-success btn-lg w-100 fw-semibold">
                                 <i class="bi bi-box-arrow-in-right me-1"></i>Ingresar
                             </button>
                         </form>

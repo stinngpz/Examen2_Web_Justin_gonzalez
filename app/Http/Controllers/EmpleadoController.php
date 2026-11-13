@@ -39,6 +39,18 @@ class EmpleadoController extends Controller
             'salario' => 'required|numeric|gt:0',
             'fecha_ingreso' =>'required|date',
             'estado' => 'required|in:Activo,Inactivo'
+        ], [
+            'required' => 'Este campo es obligatorio.',
+            'max' => 'Este campo supera el tamaño permitido.',
+            'identidad.digits' => 'La identidad debe tener exactamente 13 dígitos, sin guiones.',
+            'identidad.unique' => 'Esa identidad ya está registrada.',
+            'correo.email' => 'Ingrese un correo válido.',
+            'correo.unique' => 'Ese correo ya está registrado.',
+            'cargo.in' => 'Seleccione un cargo válido.',
+            'salario.numeric' => 'El salario debe ser un número.',
+            'salario.gt' => 'El salario debe ser mayor a 0.',
+            'fecha_ingreso.date' => 'Ingrese una fecha válida.',
+            'estado.in' => 'Seleccione un estado válido.',
         ]);
 
         Empleado::create($datos);
@@ -76,6 +88,18 @@ class EmpleadoController extends Controller
             'salario' => 'required|numeric|gt:0',
             'fecha_ingreso' => 'required|date',
             'estado' => 'required|in:Activo,Inactivo'
+        ], [
+            'required' => 'Este campo es obligatorio.',
+            'max' => 'Este campo supera el tamaño permitido.',
+            'identidad.digits' => 'La identidad debe tener exactamente 13 dígitos, sin guiones.',
+            'identidad.unique' => 'Esa identidad ya está registrada.',
+            'correo.email' => 'Ingrese un correo válido.',
+            'correo.unique' => 'Ese correo ya está registrado.',
+            'cargo.in' => 'Seleccione un cargo válido.',
+            'salario.numeric' => 'El salario debe ser un número.',
+            'salario.gt' => 'El salario debe ser mayor a 0.',
+            'fecha_ingreso.date' => 'Ingrese una fecha válida.',
+            'estado.in' => 'Seleccione un estado válido.',
         ]);
 
         $empleado->update($datos);

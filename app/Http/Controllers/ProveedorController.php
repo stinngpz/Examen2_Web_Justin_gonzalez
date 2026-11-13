@@ -39,6 +39,18 @@ class ProveedorController extends Controller
             'dias_credito'   => 'required|in:15,30,45,60',
             'estado'         => 'required|in:Activo,Inactivo',
             'fecha_registro' => 'required|date',
+        ], [
+            'required' => 'Este campo es obligatorio.',
+            'max' => 'Este campo supera el tamaño permitido.',
+            'rtn.digits' => 'El RTN debe tener exactamente 14 dígitos.',
+            'rtn.unique' => 'Ese RTN ya está registrado.',
+            'telefono.regex' => 'El teléfono debe tener 8 dígitos e iniciar en 2, 3, 8 o 9.',
+            'categoria.in' => 'Seleccione una categoría válida.',
+            'limite_credito.numeric' => 'El límite de crédito debe ser un número.',
+            'limite_credito.min' => 'El límite de crédito no puede ser negativo.',
+            'dias_credito.in' => 'Los días de crédito deben ser 15, 30, 45 o 60.',
+            'estado.in' => 'Seleccione un estado válido.',
+            'fecha_registro.date' => 'Ingrese una fecha válida.',
         ]);
 
         Proveedor::create($datos);
@@ -76,6 +88,18 @@ class ProveedorController extends Controller
             'dias_credito'   => 'required|in:15,30,45,60',
             'estado'         => 'required|in:Activo,Inactivo',
             'fecha_registro' => 'required|date',
+        ], [
+            'required' => 'Este campo es obligatorio.',
+            'max' => 'Este campo supera el tamaño permitido.',
+            'rtn.digits' => 'El RTN debe tener exactamente 14 dígitos.',
+            'rtn.unique' => 'Ese RTN ya está registrado.',
+            'telefono.regex' => 'El teléfono debe tener 8 dígitos e iniciar en 2, 3, 8 o 9.',
+            'categoria.in' => 'Seleccione una categoría válida.',
+            'limite_credito.numeric' => 'El límite de crédito debe ser un número.',
+            'limite_credito.min' => 'El límite de crédito no puede ser negativo.',
+            'dias_credito.in' => 'Los días de crédito deben ser 15, 30, 45 o 60.',
+            'estado.in' => 'Seleccione un estado válido.',
+            'fecha_registro.date' => 'Ingrese una fecha válida.',
         ]);
 
         $proveedor->update($datos);

@@ -49,6 +49,22 @@ class InsumoController extends Controller
             'fecha_vencimiento' => 'nullable|date',
             'fecha_registro' => 'required|date',
             'numero_lote' => 'required|max:100',
+        ], [
+            'required' => 'Este campo es obligatorio.',
+            'max' => 'Este campo supera el tamaño permitido.',
+            'date' => 'Ingrese una fecha válida.',
+            'codigo.unique' => 'Ese código (SKU) ya está registrado.',
+            'categoria.in' => 'Seleccione una categoría válida.',
+            'precio.numeric' => 'El precio debe ser un número.',
+            'precio.gt' => 'El precio debe ser mayor a 0.',
+            'costo.numeric' => 'El costo debe ser un número.',
+            'costo.min' => 'El costo no puede ser negativo.',
+            'inventario.integer' => 'El inventario debe ser un número entero.',
+            'inventario.min' => 'El inventario no puede ser negativo.',
+            'imagen.image' => 'El archivo debe ser una imagen.',
+            'imagen.mimes' => 'La imagen debe ser jpg, png o webp.',
+            'imagen.max' => 'La imagen no debe pesar más de 5 MB.',
+            'imagen.uploaded' => 'No se pudo subir la imagen.',
         ]);
 
         if ($request->hasFile('imagen')) {
@@ -95,6 +111,22 @@ class InsumoController extends Controller
             'fecha_vencimiento' => 'nullable|date',
             'fecha_registro' => 'required|date',
             'numero_lote' => 'required|max:100',
+        ], [
+            'required' => 'Este campo es obligatorio.',
+            'max' => 'Este campo supera el tamaño permitido.',
+            'date' => 'Ingrese una fecha válida.',
+            'codigo.unique' => 'Ese código (SKU) ya está registrado.',
+            'categoria.in' => 'Seleccione una categoría válida.',
+            'precio.numeric' => 'El precio debe ser un número.',
+            'precio.gt' => 'El precio debe ser mayor a 0.',
+            'costo.numeric' => 'El costo debe ser un número.',
+            'costo.min' => 'El costo no puede ser negativo.',
+            'inventario.integer' => 'El inventario debe ser un número entero.',
+            'inventario.min' => 'El inventario no puede ser negativo.',
+            'imagen.image' => 'El archivo debe ser una imagen.',
+            'imagen.mimes' => 'La imagen debe ser jpg, png o webp.',
+            'imagen.max' => 'La imagen no debe pesar más de 5 MB.',
+            'imagen.uploaded' => 'No se pudo subir la imagen.',
         ]);
 
         if ($request->hasFile('imagen')) {

@@ -20,6 +20,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <form action="{{ route('insumos.index') }}" method="GET" class="form-inline">
+            @csrf
             <input type="text" name="buscar" value="{{ $buscar }}" class="form-control mr-2" placeholder="Buscar por nombre o SKU">
             <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-search"></i> Buscar</button>
             @if ($buscar)
@@ -37,7 +38,6 @@
                         <th>Nombre</th>
                         <th>Categoría</th>
                         <th>Precio</th>
-                        <th>Inventario</th>
                         <th>Existencias</th>
                         <th>Acciones</th>
                     </tr>
@@ -56,8 +56,8 @@
                             <td>{{ $insumo->nombre }}</td>
                             <td>{{ $insumo->categoria }}</td>
                             <td>L. {{ number_format($insumo->precio, 2) }}</td>
-                            <td>{{ $insumo->inventario }}</td>
                             <td>
+                                {{ $insumo->inventario }}
                                 @if ($insumo->inventario > 20)
                                     <span class="badge badge-success">Óptimo</span>
                                 @elseif ($insumo->inventario >= 10)
@@ -82,7 +82,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="text-center text-muted">No hay insumos registrados.</td>
+                            <td colspan="7" class="text-center text-muted">No hay insumos registrados.</td>
                         </tr>
                     @endforelse
                 </tbody>
